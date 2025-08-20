@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         MoDao Screen Text Extractor with Levels + StartLevel开关
 // @namespace    http://tampermonkey.net/
-// @version      1.7
-// @description  V1.7 在 MoDao 页面提取 screen 文本路径，可自定义层级范围、起始节点，支持 startLevel 开关控制路径起点
+// @version      1.8
+// @description  V1.8 在 MoDao 页面提取 screen 文本路径，可自定义层级范围、起始节点，支持 startLevel 开关控制路径起点
 // @author       jkm
 // @match        https://modao.cc/proto/*/sharing*
 // @updateURL    https://raw.githubusercontent.com/iaaiNG/MoDao-Screen-Text-Extractor/main/modao-screen-text-extractor.user.js
@@ -178,7 +178,7 @@
       return
     }
 
-    console.log(`${JSON.stringify(paths)}.map((p, i) => `${p}`).join('\n')`)
+    console.log(`${JSON.stringify(paths)}.map((p, i) => \`\${p}\`).).join('\n')`)
     console.log(paths.map((p, i) => `前端-${i + 1 < 10 ? '0' : ''}${i + 1}.${p}`).join('\n'))
     alert('已打印到控制台')
   })
